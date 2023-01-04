@@ -19,3 +19,19 @@ src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_CODE"></script>
 </script>
  """
  return prefix_google + "Hello World"
+
+
+ #@app.route('/', methods=["GET"])
+#def hello_world():
+# prefix_google = """
+# <!-- Google tag (gtag.js) -->
+#<script async
+#src="https://www.googletagmanager.com/gtag/js?id=UA-250994065-2"></script>
+#<script>
+# window.dataLayer = window.dataLayer || [];
+# function gtag(){dataLayer.push(arguments);}s
+# gtag('js', new Date());
+# gtag('config', 'UA-250994065-2');
+#</script>
+# """
+# return prefix_google + "Hello World"
