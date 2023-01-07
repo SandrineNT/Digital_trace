@@ -1,7 +1,5 @@
-from flask import Flask
+import logging
 
-app = Flask(__name__)  # notice that the app instance is called `app`, this is very important.
-
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"deta new --python first_micro
+logging.basicConfig(format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+B = logging.warning('The Admin just logged out')
+print(B)

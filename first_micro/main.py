@@ -1,10 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template, request
 import logging
+import sys
+
 
 app = Flask(__name__)
 
-LOGGER = logging.getLogger(__name__)
-#logging.basicConfig(filename='record.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
+logging.basicConfig(filename='record.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
 @app.route('/', methods=["GET"])
 def hello_world():
@@ -19,22 +20,11 @@ src="https://www.googletagmanager.com/gtag/js?id=UA-250994065-2"></script>
  gtag('config', 'UA-250994065-2');
 </script>
  """
- return prefix_google + "Hello World"
 
-#Afficher les log @app.route('/', methods = ['POST'])
-def redirect_response():
-    if request.form["submit"] == "Logger":
-        return redirect(url_for("logger"))
-    return "Connecté!"
+ return prefix_google + "Hello Word"
 
-# Define logger on deta
-@app.route('/logger', methods = ['GET', 'POST'])
-def logger():
+ # Define logger on deta
+@app.route('/Logs', methods = ['GET', 'POST'])
+def Logs():
+ return render_template("Index.html")
 
-    global user_input
-
-    print('Back-end log!', file=sys.stderr)
-    logging.info("Logging test")
-    value = request.form.get("textbox_input")
-
-    return render_template("logger.html",text=value) 
