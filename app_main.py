@@ -1,5 +1,5 @@
 import logging
 
 logging.basicConfig(format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
-B = logging.warning('The Admin just logged out')
+logging.warning('The Admin just logged out')
 print(B)
